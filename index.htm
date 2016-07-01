@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="Author" contect="Ganlv"/ > 
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			font-weight: 100;
+		}
+		header, nav, section, footer, main {
+			display: block;
+		}
+		body {
+			background-color: #f6f5f5;
+			font-size: 18px;
+			font-family: Arial, Helvetica, "微软雅黑", sans-serif;
+		}
+		@media screen and (max-width: 639px) {
+			body{font-size: 17px;}
+		}
+		@media screen and (max-width: 413px) {
+			body{font-size: 16px;}
+		}
+		@media screen and (max-width: 320px) {
+			body{font-size: 14px;}
+		}
+		input {
+			border: none;
+		}
+		header {
+			background-color: #000;
+		}
+		header h1 {
+			display: inline-block;
+			padding: 1em 0;
+			color: #fff;
+			font-size: 1em;
+			text-indent: 2em;
+		}
+		header nav {
+			float: right;
+		}
+		header nav li {
+			list-style: none;
+			color: #ccc;
+			padding: 1em;
+		}
+		header nav a {
+			text-decoration: none;
+		}
+		#page-1 {
+			padding: 10em 0;
+			background-color: #222;
+		}
+		#page-1 h1 {
+			margin: 1em 0;
+			color: #fff;
+			text-align: center;
+			font-size: 2em;
+		}
+		#page-2 {
+			padding: 8em 0;
+			background-color: #234;
+		}
+		#page-2 h1 {
+			margin: 1em 0;
+			color: #fff;
+			text-align: center;
+			font-size: 2em;
+		}
+		#page-2 p {
+			margin: 1em 0;
+			color: #fff;
+			text-align: center;
+			font-size: 1.5em;
+		}
+		#page-3 {
+			padding: 12em 0;
+			background-color: #ddd;
+		}
+		#page-3 h1 {
+			margin: 1em 0;
+			color: #333;
+			text-align: center;
+			font-size: 2em;
+		}
+		#page-main {
+			padding: 2em 0;
+		}
+		#page-main > section {
+			margin: 0 auto;
+			width: 90%;
+			border: 2px solid #333;
+			border-radius: 0.5em;
+		}
+		.form {
+			float: left;
+			width: 50%;
+			vertical-align: top;
+		}
+		.form-login h1 {
+			border-right: 2px solid #fff;
+			border-top-left-radius: 0.3em;
+		}
+		.form-book h1 {
+			border-top-right-radius: 0.3em;
+		}
+		@media screen and (max-width: 639px) {
+			.form {
+				width: 100%;
+			}
+			.form-login h1 {
+				border: 0;
+				border-radius: 0.3em 0.3em 0 0;
+			}
+			.form-book h1 {
+				border-radius: 0;
+			}
+			#section-login .form-book {
+				display: none;
+			}
+		}
+		.form > h1 {
+			padding: 0.5em 0 0.5em 1em;
+			color: #fff;
+			background-color: #333;
+			font-size: 1em;
+		}
+		.form > section {
+			margin: 1em;
+		}
+		.form > section p {
+			color: #333;
+			margin: 1em 0;	
+			font-size: 1em;
+		}
+		.captcha {
+			width: 50%;
+		}
+		input[type="text"], input[type="password"] {
+			padding: 0.5em 0;
+			width: 100%;
+			text-indent: 0.5em;
+			font-size: 1em;
+			border: 1px solid #999;
+			border-radius: 0.3em;
+		}
+		input[type="submit"] {
+			padding: 0.5em 0;
+			width: 100%;
+			text-align: center;
+			font-size: 1em;
+			border-radius: 0.3em;
+		}
+		#login {
+			background-color: #6c9;
+		}
+		#logout {
+			background-color: #f66;
+		}
+		#stop {
+			background-color: #666;
+		}
+		#select {
+			background-color: #39c;
+		}
+		#section-login .form-book h2 {
+			margin-top: 8em;
+			color: #999;
+			font-size: 1em;
+			text-align: center;
+		}
+		.content {
+			text-indent: 1em;
+		}
+		footer {
+			padding: 2em 0;
+			background-color: #333;
+			font-size: 1em;
+			text-align: center;
+		}
+		footer a {
+			color: #eee;
+			font-size: 1em;
+		}
+		footer address {
+			margin-top: 2em;
+			font-size: 0.8em;
+		}
+		footer address a {
+			color: #666;
+			text-decoration: none;
+		}
+	</style>
+	<title>外研社大学英语平台自动挂机系统</title>
+</head>
+
+<body>
+	<header>
+		<h1>Unipus Keep Online</h1>
+		<nav>
+			<ul>
+				<a id="login-link" href="#page-main"><li>Login</li></a>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="page-1" class="page">
+			<h1>外研社大学英语平台</h1>
+			<h1>自动挂机系统</h1>
+		</section>
+		<section id="page-2" class="page">
+			<h1>Step 1</h1>
+			<p>Login with your student number and password.</p>
+			<h1>Step 2</h1>
+			<p>Select a book to read.</p>
+		</section>
+		<section id="page-3" class="page">
+			<h1>Start here!</h1>
+		</section>
+		<section id="page-main" class="page">
+			<section id="section-login">
+				<section class="form form-login">
+					<h1>Step 1: Login</h1>
+					<section>
+						<form action="api.php?action=login" method="post">
+							<label>
+								<p>Student number</p>
+								<p><input type="text" name="username" placeholder="Student number"></p>
+							</label>
+							<label>
+								<p>Password</p>
+								<p><input type="password" name="password" placeholder="Password"></p>
+							</label>
+							<label>
+								<p>Captcha</p>
+								<p id="change"><img class="captcha" src="">Case insensitive<br>Click to change the captcha</p>
+								<p><input type="text" name="captcha" placeholder="Captcha"></p>
+							</label>
+							<p><input type="submit" id="login" value="Login"></p>
+						</form>
+					</section>
+				</section>
+				<section class="form form-book">
+					<h1>Step 2: Select a book</h1>
+					<section>
+						<h2>You need to login first.</h2>
+					</section>
+				</section>
+				<div style="clear:both"></div>
+			</section>
+			<section id="section-loggedin">
+				<section class="form form-login">
+					<h1>Step 1: Logged in</h1>
+					<section>
+						<p>Student number</p>
+						<p id="username" class="content"></p>
+						<p>Online time</p>
+						<p id="time" class="content"></p>
+						<p class="content"><a id="showmore" href="javascript:">Show more...</a></p>
+						<div id="more"></div>
+						<p>Current keep online url</p>
+						<p id="url" class="content"></p>
+						<form action="api.php?action=logout" method="post">
+							<p><input type="submit" id="logout" value="Logout but keep online"></p>
+						</form>
+						<form action="api.php?action=stop" method="post">
+							<p><input type="submit" id="stop" value="Stop keeping online"></p>
+						</form>
+					</section>
+				</section>
+				<section class="form form-book">
+					<h1>Step 2: Select a book</h1>
+					<section>
+						<form action="api.php?action=book" method="post">
+							<section id="book">
+								<label><p><input type="radio" name="url" value="/login/nsindex_student.php">教学平台首页</p></label>
+								<label><p><input type="radio" name="url" value="/login/nsindex_student.php">教学平台首页</p></label>
+							</section>
+							<p><input type="submit" id="select" value="Select the book"></p>
+						</form>
+					</section>
+				</section>
+				<div style="clear:both"></div>
+			</section>
+		</section>
+	</main>
+	<footer>
+		<aside>
+			<a href="https://github.com/GanlvIO/UnipusKeepOnline" target="_blank">Source on GitHub</a>
+			<a href="http://202.117.216.249:8003/" target="_blank">Unipus platform</a>
+		</aside>
+		<address><a href="https://github.com/GanlvIO" target="_blank">Author: Ganlv</a></address>
+	</footer>
+	<script src="jquery.min.js"></script>
+	<script>
+		$("#section-loggedin").hide();
+		$("#login-link").click(function () {
+			$("body").animate({scrollTop: $("#page-main").offset().top}, 500);
+			return false;
+		});
+		$("#change").click(function () {
+			$(".captcha").attr("src", "captcha.php?t=" + (new Date()).getTime());
+			return false;
+		});
+		$("#showmore").click(function () {
+			$("#more").toggle();
+		});
+		function set_info(data) {
+			$("#username").text(data.username);
+			$("#url").text(data.url);
+			var time = data.time;
+			$("#time").text(time[0]);
+			var html = '';
+			for (var i = 1; i < time.length; ++i) {
+				html += '<p class="content">' + time[i] + '</p>';
+			}
+			$("#more").html(html).hide();
+			var book = data.book;
+			html = '';
+			for (var i in book) {
+				html += '<label><p><input type="radio" name="url" value="' + book[i].url + '">' + book[i].name + '</p></label>';
+			}
+			$("#book").html(html);
+			$("#section-loggedin").show();
+			$("#section-login").hide();
+			$("body").animate({scrollTop: $("#page-main").offset().top}, 200);
+		}
+		$.post("api.php?action=info", null, function (data) {
+			if (data.ret == 2) {
+				set_info(data.data);
+			} else {
+				$("#change").click();
+			}
+		});
+		$("form").submit(function () {
+			$.post($(this).attr("action"), $(this).serialize(), function (data) {
+				switch (data.ret) {
+				case 1:
+					set_info(data.data);
+					break;
+				case 3:
+					alert(data.msg);
+					$("#url").text(data.data.url);
+					break;
+				case 4:
+				case 5:
+					alert(data.msg);
+					$("#section-login").show();
+					$("#section-loggedin").hide();
+					$("#change").click();
+					break;
+				default:
+					$("#change").click();
+					alert(data.msg);
+				}
+			});
+			return false;
+		});
+	</script>
+</body>
+
+</html>
